@@ -1,9 +1,9 @@
 # DogeAdmin
-In Progress Firebase-Admin SDK Administrative Tool, User Management/Custom Claims
+In Progress Firebase-Admin SDK Administrative Tool, User Management/Custom Claim
 
 ```
 
-								░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░
+
   _____                                 _           _       	░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐░░░
  |  __ \                       /\      | |         (_)      	░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐░░░
  | |  | | ___   __ _  ___     /  \   __| |_ __ ___  _ _ __  	░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌░░░
