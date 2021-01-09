@@ -17,3 +17,6 @@ In Progress Firebase-Admin SDK Administrative Tool, User Management/Custom Claim
 								░▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌░
 
 ```
+
+
+Much Wow, Very Auth, Such Admin
