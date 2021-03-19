@@ -1,0 +1,73 @@
+<div class =" d-flex justify-content-center">
+    <h4>Create User</h4>
+</div>
+
+<br>
+
+<div class="">
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+
+    <div class = "row">
+        <div class = "col-2"></div>
+        <div class = "col-4">
+            <div class="form-group">
+                <p>First Name:</p>
+                <input class="form-control" type = "text" placeholder="First Name" formControlName="firstName">
+            </div>
+        </div>
+
+        <div class = "col-4">
+            <div class="form-group">
+                <p>Last Name:</p>
+                <input class="form-control" type = "text" placeholder="Last Name" formControlName="lastName">
+            </div>
+        </div>
+        <div class = "col-2"></div>
+    </div>
+
+
+    <div class = "row">
+        <div class = "col-2"></div>
+        <div class = "col-4">
+            <div class="form-group">
+                <p>Email:</p>
+              <input class="form-control" type = "text" placeholder="Email" formControlName="email">
+            </div>
+        </div>
+
+        <div class = "col-4">
+            <div class="form-group">
+                <p>Password:</p>
+              <input class="form-control" type = "password" placeholder="Password" formControlName="password">
+            </div>
+        </div>
+        <div class = "col-2"></div>
+    </div>
+
+
+    <div class = "row">
+        <div class = "col-2"></div>
+        <div class = "col-4">
+            <div class="form-group">
+                <p>Role:</p>
+              <input class="form-control" type = "text" placeholder="Role" formControlName="role">
+            </div>
+        </div>
+
+        <div class = "col-4">
+            <div class="form-group">
+                <p>Group:</p>
+                <input class="form-control" type = "text" placeholder="Group" formControlName="group">
+            </div>
+        </div>
+        <div class = "col-2"></div>
+    </div>
+
+    <div class =" d-flex justify-content-center">
+        <button class="btn btn-primary">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+<br>

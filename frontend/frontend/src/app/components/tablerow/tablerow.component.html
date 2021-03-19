@@ -1,0 +1,21 @@
+
+<td>{{user?.uid}}</td>
+<td>{{user?.email}}</td>
+<td>{{user?.displayName}}</td>
+<td>{{user?.customClaims?.role}}</td>
+<td>{{user?.customClaims?.group}}</td>
+<!-- <td><i class="fas fa-bars"></i></td>
+<td><i class="fas fa-angle-down"></i></td> -->
+
+
+
+<td><div class="dropdown">
+    <i class="fas fa-bars dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+      <a class="dropdown-item" (click)="viewUser()">Edit User</a>
+      <a class="dropdown-item" (click)="resetPassword()">Reset Password</a>
+      <a *ngIf="user?.disabled == false" class="dropdown-item" (click)="disableUser()">Disable User</a>
+      <a *ngIf="user?.disabled == true" class="dropdown-item" (click)="enableUser()">Enable User</a>
+    </div>
+  </div>
+</td>

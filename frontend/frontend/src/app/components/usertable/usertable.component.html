@@ -1,0 +1,51 @@
+<div class = "row">
+    <div class = "col-2"></div>
+    <div class = "col-6">
+        <div class="input-group">
+            <div class="form-outline">
+              <input #searchValue type="search" id="form1" class="form-control" (input)="update(searchValue)"/>
+            </div>
+            <button type="button" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class = "col-2">
+        <a style = "color: inherit;" routerLink="/create-user" routerLinkActive="active"><button type="button" class="btn btn-success">Create <i class="fas fa-user"></i> <i class="fas fa-plus"></i></button></a>
+    </div>
+    <div class = "col-2"></div>
+</div>
+
+
+
+
+<div class = "row">
+    <div class = "col-2"></div>
+    
+    <div class = "col-8">
+
+        <div *ngIf="userList[0]" class="">
+            <table class = "table table-striped">
+                <thead >
+                    <tr>
+                        <th scope="col">UID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Display Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Group</th>                
+                    </tr>
+                </thead>
+                <ng-container>
+                    <tbody *ngFor="let user of userList | user:searchValue.value">
+                        <tr tablerow [user] = "user"></tr>
+        
+                    </tbody>
+                </ng-container>
+            </table>
+        </div>
+
+    </div>
+
+    <div class = "col-2"></div>
+</div>

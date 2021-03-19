@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "test-a0bf1": {
+      "hosting": {
+        "frontend": [
+          "test-a0bf1"
+        ]
+      }
+    }
+  }
+}

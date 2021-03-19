@@ -1,0 +1,92 @@
+<br>
+
+<div class="">
+  
+      <div class = "row">
+          <div class = "col-2"></div>
+          <div class = "col-4">
+            <div *ngIf = "user" class = "container">
+                <!-- <h4>{{downloadUrl}}</h4> -->
+                <img [src]="downloadUrl" style = "height: 200px; width: 200px;" alt="Image from AngularFireStorage">
+            
+                <h3 >{{user?.displayName}} <i class="far fa-edit"></i></h3> 
+                <p>Email: {{user?.email}}</p>
+                <p>UID: {{user?.uid}}</p>
+                <p>Role: {{user?.customClaims?.role}}</p>
+                <p>Group: {{user?.customClaims?.group}}</p>
+            
+                <p> Account Created: {{user?.userMetadata.creationTimestamp | date}}</p>
+                <p >Last Signed In: {{user?.userMetadata.lastSignInTimestamp | date}}</p>
+            </div>
+            
+          </div>
+  
+          <div class = "col-4">
+              <div class="container">
+                  <h3>Logs:</h3>
+                  
+                  <p>2021-03-16 12:07:57.063  INFO 16096 --- [nio-8443-exec-5] c.d.backend.aspects.ControllerAspect   :CONTROLLER LOGS: getUserByUID Was Invoked From http://localhost:4200/</p>
+
+                <p>2021-03-16 12:07:57.063  INFO 16096 --- [nio-8443-exec-5] c.d.backend.aspects.ControllerAspect     :CONTROLLER LOGS: getUserByUID Was Invoked From http://localhost:4200/</p>  
+              </div>
+          </div>
+          <div class = "col-2"></div>
+      </div>
+</div>
+
+
+<br>
+
+
+<div class="">
+    <form [formGroup]="formDisplayName" (ngSubmit)="updateDisplayName()">
+  
+      <div class = "row">
+          <div class = "col-2"></div>
+          <div class = "col-2">Change Display Name -></div>
+          <div class = "col-2">
+            <div class="form-group">
+                <!-- <p>First Name:</p> -->
+                <input class="form-control" type = "text" placeholder="First Name" formControlName="firstName">
+            </div>
+          </div>
+          
+          <div class = "col-2">
+            <div class="form-group">
+                <!-- <p>Last Name:</p> -->
+                <input class="form-control" type = "text" placeholder="Last Name" formControlName="lastName">
+            </div>
+          </div>
+          <div class = "col-2"><button class="btn btn-primary">Submit</button></div>
+          <div class = "col-2"></div>
+      </div>
+    </form>
+</div>
+
+<br>
+
+<div class="">
+    <form [formGroup]="formCustomClaims" (ngSubmit)="updateCustomClaims()">
+  
+      <div class = "row">
+          <div class = "col-2"></div>
+          <div class = "col-2">Change Custom Claims -></div>
+          <div class = "col-2">
+            <div class="form-group">
+                <!-- <p>Role:</p> -->
+              <input class="form-control" type = "text" placeholder="Role" formControlName="role">
+            </div>
+          </div>
+          
+          <div class = "col-2">
+            <div class="form-group">
+                <!-- <p>Group:</p> -->
+                <input class="form-control" type = "text" placeholder="Group" formControlName="group">
+            </div>
+          </div>
+          <div class = "col-2"><button class="btn btn-primary">Submit</button></div>
+          <div class = "col-2"></div>
+      </div>
+    </form>
+</div>
+
