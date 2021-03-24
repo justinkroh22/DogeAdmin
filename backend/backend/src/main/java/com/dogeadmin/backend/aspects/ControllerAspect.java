@@ -37,6 +37,7 @@ public class ControllerAspect {
 		LinkedHashMap<String, String> lhm = mapper.readValue(jsonString, LinkedHashMap.class);
 		String ipAddress = lhm.get("referer");
 	    String jwtBody = DecodeJWT.decodeJWTBody(TokenConverter.stripBearer(lhm.get("authorization")));
+	    String userID = DecodeJWT.decodeJWTBodyAsLHM(TokenConverter.stripBearer(lhm.get("authorization"))).get("user_id").toString();
 		
 	    LocalDateTime currentTime = LocalDateTime.now();
 	    LocalDate date = currentTime.toLocalDate();
@@ -45,7 +46,8 @@ public class ControllerAspect {
 	    String controllerLog = "<CONTROLLER LOGS>: " + methodName + " "
 	    		+ "Was Invoked From"  + " " + ipAddress + " "
 	    		// + "at Date:" + " " + date + " " + "Time: " + time +  " "
-	    		+ "With Token Info" + " " + jwtBody;
+	    		//+ "With Token Info" + " " + jwtBody
+	    		+ "With User ID" + " " + userID;
 
 		log.info(controllerLog);
 	    

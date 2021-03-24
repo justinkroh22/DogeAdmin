@@ -4,10 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import firebase from 'firebase/app';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserMetadata, User, IdTokenResult } from '@firebase/auth-types';
-import { CustomFirebaseUserClass} from 'src/app/models/CustomFirebaseUserClass';
 import { FBUser} from 'src/app/models/FBUser';
 import { map } from 'rxjs/operators';
-import { SendClaim } from '../models/SendClaim';
 import { first } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
@@ -83,10 +81,15 @@ export class UserService {
     
   }
 
-
   disableUser(uid: string) {
 
     return this.http.post<any>(environment.apiUrls.disableUser, uid, this.httpOptions);
+
+  }
+
+  getUserLogs(uid: string) {
+
+    return this.http.post<any>(environment.apiUrls.getUserLogs + uid, this.httpOptions);
 
   }
 

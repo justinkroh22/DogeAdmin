@@ -25,9 +25,11 @@
               <div class="container">
                   <h3>Logs:</h3>
                   
-                  <p>2021-03-16 12:07:57.063  INFO 16096 --- [nio-8443-exec-5] c.d.backend.aspects.ControllerAspect   :CONTROLLER LOGS: getUserByUID Was Invoked From http://localhost:4200/</p>
+                  <ng-container *ngFor="let log of logs">
+                    <p>{{log}}</p>
 
-                <p>2021-03-16 12:07:57.063  INFO 16096 --- [nio-8443-exec-5] c.d.backend.aspects.ControllerAspect     :CONTROLLER LOGS: getUserByUID Was Invoked From http://localhost:4200/</p>  
+                </ng-container>
+
               </div>
           </div>
           <div class = "col-2"></div>

@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
@@ -38,6 +39,11 @@ import com.google.firebase.auth.UserRecord.UpdateRequest;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.oauth2.server.resource.authentication.BearerTokenAuthentication;
+import java.io.File;  // Import the File class
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.Scanner; // Import the Scanner class to read text files
+
 
 @RestController
 @RequestMapping(path="/user", method = {RequestMethod.GET, RequestMethod.POST})
@@ -128,7 +134,31 @@ public class UserController {
     }
     
     
-    
+    @GetMapping(path="logs/{uId}", produces = MediaType.APPLICATION_JSON_VALUE) 
+    @ResponseBody
+	public List<String> getUserLogs(@RequestHeader Map<String, String> headers, @PathVariable(name="uId", required = true) String uid) throws FirebaseAuthException {
+    	 
+    	ArrayList<String> userLogs = new ArrayList<String>();
+    	
+        try {
+            FileInputStream myObj = new FileInputStream("./logs/spring-boot-logger.log");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+              String data = myReader.nextLine();
+              
+              if (data.contains(uid)) {
+            	  userLogs.add(data);
+              }
+            }
+            myReader.close();
+          } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+          }
+        
+        
+        return userLogs.subList(userLogs.size() - 3, userLogs.size());
+	}
     
     
 }

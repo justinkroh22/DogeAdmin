@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 //import {AngularFireAuth} from '@angular/fire/auth';
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-userview',
@@ -20,6 +21,8 @@ export class UserviewComponent implements OnInit {
   formCustomClaims: FormGroup;
 
   bool: Boolean = false;
+
+  logs: any;
 
   @Input() user?: FBUser;
 
@@ -67,8 +70,8 @@ export class UserviewComponent implements OnInit {
   getUserFromURL() {
 
     let uID = this.route.snapshot.paramMap.get('id');
-    this.userService.getUserByID(uID)
-    .subscribe(data => {this.user = data}, err => console.log(err), () => console.log(this.user));
+    this.userService.getUserByID(uID).pipe(first())
+    .subscribe(data => {this.user = data}, err => console.log(err), () => this.getUserLogs());
   }
 
   setClaims(user: FBUser) {
@@ -108,6 +111,14 @@ export class UserviewComponent implements OnInit {
     .subscribe(data => {console.log(data)}, err => console.log(err), () => console.log("fisnished"));
   }
 
+  getUserLogs() {
+    if (this.user?.uid) {
+    console.log('test')
+    this.userService.getUserLogs(this.user?.uid)
+    .subscribe(data => {this.logs = data}, err => console.log(err), () => console.log(this.logs))
+    }
+  }
+
 
 
   ngOnInit(): void {
@@ -115,6 +126,7 @@ export class UserviewComponent implements OnInit {
     //this.getUserFromURL();
     this.getUser();
     this.download();
+    //this.getUserLogs();
 
   }
 

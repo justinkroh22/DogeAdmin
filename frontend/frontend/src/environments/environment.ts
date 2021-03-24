@@ -24,7 +24,8 @@ export const environment = {
     createUser: baseUrl + 'create-user',
     resetPassword: baseUrl + 'reset-password',
     disableUser: baseUrl + 'disable-user',
-    enableUser: baseUrl + 'enable-user'
+    enableUser: baseUrl + 'enable-user',
+    getUserLogs: baseUrl +'logs/'
 
   }
 };

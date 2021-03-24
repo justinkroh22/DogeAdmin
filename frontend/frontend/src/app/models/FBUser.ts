@@ -34,31 +34,5 @@ export class FBUser {
 
     }
 
-    setName(displayName: string) {
-
-        this.displayName = displayName;
-    }
-
-    getUID() {
-        return this.uid;
-
-    }
-
-
-    getName() {
-
-        return this.displayName;
-    }
-
-    getEmail() {
-
-        return this.email as string;
-    }
-
-    // getCustomClaims() {
-    //     console.log(this.customClaims.keys());
-    //     console.log(this.customClaims.entries());
-    //     //this.customClaims.has
-    // }
 
 }
