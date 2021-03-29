@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 //.mvcMatchers("/user/all").hasAuthority("ROLE_Admin")
-                .antMatchers("/*")
+                .antMatchers("/**")
                         .authenticated()
                 .and()
                 .oauth2ResourceServer()

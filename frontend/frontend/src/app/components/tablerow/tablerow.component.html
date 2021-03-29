@@ -1,5 +1,5 @@
 
-<td>{{user?.uid}}</td>
+<td [ngStyle]="{'color': user?.disabled ? '#00aeff' : '#ff0000'}">{{user?.uid}}</td>
 <td>{{user?.email}}</td>
 <td>{{user?.displayName}}</td>
 <td>{{user?.customClaims?.role}}</td>

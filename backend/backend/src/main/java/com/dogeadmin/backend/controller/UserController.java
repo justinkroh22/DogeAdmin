@@ -136,28 +136,10 @@ public class UserController {
     
     @GetMapping(path="logs/{uId}", produces = MediaType.APPLICATION_JSON_VALUE) 
     @ResponseBody
-	public List<String> getUserLogs(@RequestHeader Map<String, String> headers, @PathVariable(name="uId", required = true) String uid) throws FirebaseAuthException {
+	public List<String> getUserLogs(@RequestHeader Map<String, String> headers, @PathVariable(name="uId", required = true) String uid) {
     	 
-    	ArrayList<String> userLogs = new ArrayList<String>();
+    	return this.userService.getUserLogs(uid);
     	
-        try {
-            FileInputStream myObj = new FileInputStream("./logs/spring-boot-logger.log");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-              String data = myReader.nextLine();
-              
-              if (data.contains(uid)) {
-            	  userLogs.add(data);
-              }
-            }
-            myReader.close();
-          } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-          }
-        
-        
-        return userLogs.subList(userLogs.size() - 3, userLogs.size());
 	}
     
     

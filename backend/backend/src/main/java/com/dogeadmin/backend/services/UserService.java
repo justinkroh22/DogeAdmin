@@ -1,8 +1,12 @@
 package com.dogeadmin.backend.services;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -108,6 +112,30 @@ public class UserService {
 		UserRecord user = FirebaseAuth.getInstance().createUser(cr);
 		FirebaseAuth.getInstance().setCustomUserClaims(user.getUid(), u.getCustomClaims());
 
+    }
+    
+    public List<String> getUserLogs(String uid) {
+    	ArrayList<String> userLogs = new ArrayList<String>();
+    	
+        try {
+            FileInputStream myObj = new FileInputStream("./logs/spring-boot-logger.log");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+              String data = myReader.nextLine();
+              
+              if (data.contains(uid)) {
+            	  userLogs.add(data);
+              }
+            }
+            myReader.close();
+          } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+          }
+        
+        
+        return userLogs.subList(userLogs.size() - 3, userLogs.size());
+    	
     }
 
 }

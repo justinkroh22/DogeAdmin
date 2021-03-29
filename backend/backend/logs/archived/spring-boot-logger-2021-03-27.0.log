@@ -1,0 +1,17 @@
+2021-03-27 12:28:26,747 INFO  - Starting BackendApplication using Java 15.0.1 on DESKTOP-OUG9LID with PID 14180 (C:\Users\Justin\personal-workspace\DogeAdmin\backend\backend\target\classes started by Justin in C:\Users\Justin\personal-workspace\DogeAdmin\backend\backend)
+2021-03-27 12:28:26,750 INFO  - No active profile set, falling back to default profiles: default
+2021-03-27 12:28:27,624 INFO  - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1f7076bc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-27 12:28:27,630 INFO  - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-27 12:28:27,865 INFO  - Tomcat initialized with port(s): 8443 (https)
+2021-03-27 12:28:27,875 INFO  - Initializing ProtocolHandler ["https-jsse-nio-8443"]
+2021-03-27 12:28:27,876 INFO  - Starting service [Tomcat]
+2021-03-27 12:28:27,876 INFO  - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-03-27 12:28:27,963 INFO  - Initializing Spring embedded WebApplicationContext
+2021-03-27 12:28:27,963 INFO  - Root WebApplicationContext: initialization completed in 1181 ms
+2021-03-27 12:28:28,171 INFO  - Initializing Firebase App...
+2021-03-27 12:28:28,375 INFO  - Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-27 12:28:29,157 INFO  - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43a59289, org.springframework.security.web.context.SecurityContextPersistenceFilter@36cfe107, org.springframework.security.web.header.HeaderWriterFilter@7e1d8d41, org.springframework.web.filter.CorsFilter@6c2883b1, org.springframework.security.web.authentication.logout.LogoutFilter@4df0d9f8, org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter@213012a0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56266bda, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@139089a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@336e3be2, org.springframework.security.web.session.SessionManagementFilter@70a24f9, org.springframework.security.web.access.ExceptionTranslationFilter@d76099a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@538aa83f]
+2021-03-27 12:28:29,173 INFO  - Exposing 13 endpoint(s) beneath base path '/actuator'
+2021-03-27 12:28:29,194 INFO  - Starting ProtocolHandler ["https-jsse-nio-8443"]
+2021-03-27 12:28:29,463 INFO  - Tomcat started on port(s): 8443 (https) with context path ''
+2021-03-27 12:28:29,473 INFO  - Started BackendApplication in 3.064 seconds (JVM running for 3.377)
