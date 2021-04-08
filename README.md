@@ -1,4 +1,4 @@
-# DogeAdmin
+# DogeAdmin / FireAdmin
 In Progress Firebase-Admin SDK Administrative Tool, User Management/Custom Claim
 
 ```
