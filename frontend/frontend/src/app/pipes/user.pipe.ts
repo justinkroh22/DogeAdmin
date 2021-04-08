@@ -14,7 +14,7 @@ export class UserPipe implements PipeTransform {
        || user.uid?.toLowerCase().includes(filterBy.toLowerCase())
        || user.email?.toLowerCase().includes(filterBy.toLowerCase())
        || user.customClaims['role'].toLowerCase().includes(filterBy.toLowerCase())
-       || user.customClaims['group'].toLowerCase().includes(filterBy.toLowerCase())
+      //  || user.customClaims['group'].toLowerCase().includes(filterBy.toLowerCase())
        
        
        );

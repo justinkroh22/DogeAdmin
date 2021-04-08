@@ -29,7 +29,7 @@ export class CreateuserComponent implements OnInit {
       password: '',
       usertype: '',
       role: '',
-      group: ''
+      // group: ''
     })
 
    }
@@ -41,7 +41,7 @@ export class CreateuserComponent implements OnInit {
     var email = this.form.get('email')?.value;
     var password = this.form.get('password')?.value;
     var role = this.form.get('role')?.value;
-    var group = this.form.get('group')?.value;
+    // var group = this.form.get('group')?.value;
 
     // var userDict: any = {}
     var customClaims: any = {}
@@ -50,7 +50,7 @@ export class CreateuserComponent implements OnInit {
     // userDict['email'] = email;
     // userDict['password'] = password;
     customClaims['role'] = role;
-    customClaims['group'] = group;
+    // customClaims['group'] = group;
 
     let user: FBUser = new FBUser();
 

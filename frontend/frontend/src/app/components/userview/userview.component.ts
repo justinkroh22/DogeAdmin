@@ -84,11 +84,11 @@ export class UserviewComponent implements OnInit {
 
 
     var role = this.formCustomClaims.get('role')?.value;
-    var group = this.formCustomClaims.get('group')?.value;
+    // var group = this.formCustomClaims.get('group')?.value;
     var customClaims: any = {}
     
     customClaims['role'] = role;
-    customClaims['group'] = group;
+    // customClaims['group'] = group;
     
     let user: FBUser = new FBUser();
 
