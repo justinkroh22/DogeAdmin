@@ -35,4 +35,4 @@ Much Wow, Very Auth, Such Admin
 
 ## Description
 
-* DogeAdmin is User Managment Tool for applications that incorporate Googles Firebase Authentication. It aims to solve the lack of functionality that Firebase Console has, specifically around custom claims. Incorporate Authority by Organizing and placing your users into groups or give them an administrative role for layered accessibility in your application(s).
+* DogeAdmin is User Managment Tool for applications that incorporate Googles Firebase Authentication. It aims to solve the lack of functionality that Firebase Console has, specifically around custom claims. Incorporate Role Based Access Control for layered accessibility in your application(s).
